@@ -1,3 +1,4 @@
+using Cfg.Options.DictionaryOptions;
 using Cfg.Options.NamedOptions;
 using Cfg.Options.ScopedOptions;
 using Cfg.Options.SingletonOptions;
@@ -10,6 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.AddScopedOptions();
 builder.AddSingletonOptions();
 builder.AddNamedOptions();
+builder.AddDictionaryOptions();
 
 var app = builder.Build();
 
@@ -23,5 +25,6 @@ if (app.Environment.IsDevelopment())
 app.MapSingletonOptions();
 app.MapScopedOptions();
 app.MapNamedOptions();
+app.MapDictionaryOptions();
 
 app.Run();
